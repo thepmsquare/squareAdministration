@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v1.1.0
+
+- migrate types to zod.
+- add types to loginUsernameV0.
+
 ### v1.0.0
 
 - initial implementation.
