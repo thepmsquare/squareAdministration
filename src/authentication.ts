@@ -1,5 +1,7 @@
 import { fetchJSONData } from "squarecommons";
 
+import { loginUsernameV0ResponseZ } from "./types/AuthenticationResponses.js";
+
 class AuthenticationAdministrationBL {
   constructor(
     private administrationBLBaseURL: string = "http://localhost:10111"
@@ -47,7 +49,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined
       );
-      return data;
+      return loginUsernameV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
