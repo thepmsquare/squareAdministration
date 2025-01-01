@@ -1,6 +1,9 @@
 import { fetchJSONData } from "squarecommons";
 
-import { loginUsernameV0ResponseZ } from "./types/AuthenticationResponses.js";
+import {
+  LoginUsernameV0ResponseZ,
+  RegisterUsernameV0ResponseZ,
+} from "./types/AuthenticationResponses.js";
 
 class AuthenticationAdministrationBL {
   constructor(
@@ -27,7 +30,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined
       );
-      return data;
+      return RegisterUsernameV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
@@ -49,7 +52,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined
       );
-      return loginUsernameV0ResponseZ.parse(data);
+      return LoginUsernameV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

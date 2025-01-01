@@ -15,6 +15,10 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v1.2.0
+
+- add types to registerUsernameV0.
+
 ### v1.1.0
 
 - migrate types to zod.
