@@ -3,6 +3,7 @@ import { fetchJSONData } from "squarecommons";
 import {
   LoginUsernameV0ResponseZ,
   RegisterUsernameV0ResponseZ,
+  RemoveAppForSelfV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationAdministrationBL {
@@ -74,7 +75,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined
       );
-      return data;
+      return RemoveAppForSelfV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

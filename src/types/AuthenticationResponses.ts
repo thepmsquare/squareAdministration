@@ -24,9 +24,17 @@ const RegisterUsernameV0ResponseZ = APIOutputZ.extend({
   }),
 });
 type RegisterUsernameV0Response = z.infer<typeof RegisterUsernameV0ResponseZ>;
+const RemoveAppForSelfV0ResponseZ = APIOutputZ.extend({
+  data: z.object({
+    main: z.array(z.never()).max(0),
+  }),
+});
+type RemoveAppForSelfV0Response = z.infer<typeof RemoveAppForSelfV0ResponseZ>;
 export {
   LoginUsernameV0ResponseZ,
   LoginUsernameV0Response,
   RegisterUsernameV0ResponseZ,
   RegisterUsernameV0Response,
+  RemoveAppForSelfV0ResponseZ,
+  RemoveAppForSelfV0Response,
 };
