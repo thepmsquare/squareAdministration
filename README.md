@@ -15,6 +15,10 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v1.4.0
+
+- add types to getAllGreetingsV0.
+
 ### v1.3.1
 
 - bug fix in type for removeAppForSelfV0.

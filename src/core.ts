@@ -1,5 +1,7 @@
 import { fetchJSONData } from "squarecommons";
 
+import { GetAllGreetingsV0ResponseZ } from "./types/CoreResponses.js";
+
 class CoreAdministrationBL {
   constructor(
     private administrationBLBaseURL: string = "http://localhost:10111"
@@ -26,7 +28,7 @@ class CoreAdministrationBL {
         // query params
         undefined
       );
-      return data;
+      return GetAllGreetingsV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
