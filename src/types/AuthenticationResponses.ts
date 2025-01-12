@@ -2,8 +2,8 @@ import { APIOutputZ } from "squarecommons";
 import { z } from "zod";
 
 const LoginUsernameV0ResponseZ = APIOutputZ.extend({
-  data: z.object({
-    main: z.object({
+  data: z.strictObject({
+    main: z.strictObject({
       user_id: z.string(),
       access_token: z.string(),
       refresh_token: z.string(),
@@ -13,8 +13,8 @@ const LoginUsernameV0ResponseZ = APIOutputZ.extend({
 type LoginUsernameV0Response = z.infer<typeof LoginUsernameV0ResponseZ>;
 
 const RegisterUsernameV0ResponseZ = APIOutputZ.extend({
-  data: z.object({
-    main: z.object({
+  data: z.strictObject({
+    main: z.strictObject({
       user_id: z.string(),
       username: z.string(),
       app_id: z.number(),
@@ -25,7 +25,7 @@ const RegisterUsernameV0ResponseZ = APIOutputZ.extend({
 });
 type RegisterUsernameV0Response = z.infer<typeof RegisterUsernameV0ResponseZ>;
 const RemoveAppForSelfV0ResponseZ = APIOutputZ.extend({
-  data: z.object({
+  data: z.strictObject({
     main: z.array(z.number()),
   }),
 });
