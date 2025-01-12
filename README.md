@@ -15,6 +15,14 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v1.4.1
+
+- Core
+  - bugfix in type of getAllGreetingsV0.
+- All
+  - use strictObject instead of object in zod.
+  - export all types in index file.
+
 ### v1.4.0
 
 - add types to getAllGreetingsV0.
