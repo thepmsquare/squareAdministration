@@ -1,7 +1,9 @@
 import { fetchJSONData } from "squarecommons";
 
 import {
+  GenerateAccessTokenV0ResponseZ,
   LoginUsernameV0ResponseZ,
+  LogoutV0Z,
   RegisterUsernameV0ResponseZ,
   RemoveAppForSelfV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
@@ -76,6 +78,48 @@ class AuthenticationAdministrationBL {
         undefined
       );
       return RemoveAppForSelfV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async logoutV0(refreshToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "logout/v0",
+        // method
+        "DELETE",
+        // headers
+        { refresh_token: refreshToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return LogoutV0Z.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async generateAccessTokenV0(refreshToken: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "generate_access_token/v0",
+        // method
+        "GET",
+        // headers
+        { refresh_token: refreshToken },
+        // body
+        undefined,
+        // query params
+        undefined
+      );
+      return GenerateAccessTokenV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

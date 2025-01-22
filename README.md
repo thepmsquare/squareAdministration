@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v1.5.0
+
+- AuthenticationAdministrationBL
+  - add generateAccessTokenV0, logoutV0.
+
 ### v1.4.1
 
 - Core

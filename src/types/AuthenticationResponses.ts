@@ -30,6 +30,24 @@ const RemoveAppForSelfV0ResponseZ = APIOutputZ.extend({
   }),
 });
 type RemoveAppForSelfV0Response = z.infer<typeof RemoveAppForSelfV0ResponseZ>;
+
+const GenerateAccessTokenV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.strictObject({
+      access_token: z.string(),
+    }),
+  }),
+});
+type GenerateAccessTokenV0Response = z.infer<
+  typeof GenerateAccessTokenV0ResponseZ
+>;
+
+const LogoutV0Z = APIOutputZ.extend({
+  data: z.null(),
+});
+
+type LogoutV0 = z.infer<typeof LogoutV0Z>;
+
 export {
   LoginUsernameV0ResponseZ,
   LoginUsernameV0Response,
@@ -37,4 +55,8 @@ export {
   RegisterUsernameV0Response,
   RemoveAppForSelfV0ResponseZ,
   RemoveAppForSelfV0Response,
+  GenerateAccessTokenV0ResponseZ,
+  GenerateAccessTokenV0Response,
+  LogoutV0Z,
+  LogoutV0,
 };

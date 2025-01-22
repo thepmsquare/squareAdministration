@@ -23,3 +23,11 @@ console.log(
 console.log(
   await authenticationAdministrationBL.removeAppForSelfV0("dummy_access_token")
 );
+console.log(
+  await authenticationAdministrationBL.generateAccessTokenV0(
+    "dummy_refresh_token"
+  )
+);
+console.log(
+  await authenticationAdministrationBL.logoutV0("dummy_refresh_token")
+);
