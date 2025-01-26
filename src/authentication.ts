@@ -31,7 +31,9 @@ class AuthenticationAdministrationBL {
         // body
         { username, password, admin_password: adminPassword },
         // query params
-        undefined
+        undefined,
+        // credentials
+        "include"
       );
       return RegisterUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -53,7 +55,9 @@ class AuthenticationAdministrationBL {
         // body
         { username, password },
         // query params
-        undefined
+        undefined,
+        // credentials
+        "include"
       );
       return LoginUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -96,7 +100,9 @@ class AuthenticationAdministrationBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
+        // credentials
+        "include"
       );
       return LogoutV0Z.parse(data);
     } catch (error) {
@@ -117,7 +123,9 @@ class AuthenticationAdministrationBL {
         // body
         undefined,
         // query params
-        undefined
+        undefined,
+        // credentials
+        "include"
       );
       return GenerateAccessTokenV0ResponseZ.parse(data);
     } catch (error) {

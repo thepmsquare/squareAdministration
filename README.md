@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v2.0.1
+
+- AuthenticationAdministrationBL
+  - set credentials: include in RegisterUsernameV0ResponseZ, LoginUsernameV0ResponseZ, generateAccessTokenV0 and logoutV0.
+
 ### v2.0.0
 
 - AuthenticationAdministrationBL
