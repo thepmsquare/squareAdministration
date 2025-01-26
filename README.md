@@ -15,6 +15,12 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v2.0.0
+
+- AuthenticationAdministrationBL
+  - remove refreshToken as input parameter from generateAccessTokenV0, logoutV0.
+  - remove refresh_token from types RegisterUsernameV0ResponseZ, LoginUsernameV0ResponseZ.
+
 ### v1.5.0
 
 - AuthenticationAdministrationBL

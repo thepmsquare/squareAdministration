@@ -6,7 +6,6 @@ const LoginUsernameV0ResponseZ = APIOutputZ.extend({
     main: z.strictObject({
       user_id: z.string(),
       access_token: z.string(),
-      refresh_token: z.string(),
     }),
   }),
 });
@@ -19,7 +18,6 @@ const RegisterUsernameV0ResponseZ = APIOutputZ.extend({
       username: z.string(),
       app_id: z.number(),
       access_token: z.string(),
-      refresh_token: z.string(),
     }),
   }),
 });

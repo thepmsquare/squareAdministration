@@ -82,7 +82,7 @@ class AuthenticationAdministrationBL {
       throw error;
     }
   }
-  async logoutV0(refreshToken: string) {
+  async logoutV0() {
     try {
       const data = await fetchJSONData(
         // base url
@@ -92,7 +92,7 @@ class AuthenticationAdministrationBL {
         // method
         "DELETE",
         // headers
-        { refresh_token: refreshToken },
+        undefined,
         // body
         undefined,
         // query params
@@ -103,7 +103,7 @@ class AuthenticationAdministrationBL {
       throw error;
     }
   }
-  async generateAccessTokenV0(refreshToken: string) {
+  async generateAccessTokenV0() {
     try {
       const data = await fetchJSONData(
         // base url
@@ -113,7 +113,7 @@ class AuthenticationAdministrationBL {
         // method
         "GET",
         // headers
-        { refresh_token: refreshToken },
+        undefined,
         // body
         undefined,
         // query params
