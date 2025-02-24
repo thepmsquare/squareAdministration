@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v3.0.0
+
+- AuthenticationAdministrationBL
+  - add password as parameter in removeAppForSelfV0.
+
 ### v2.0.1
 
 - AuthenticationAdministrationBL

@@ -21,7 +21,10 @@ console.log(
   )
 );
 console.log(
-  await authenticationAdministrationBL.removeAppForSelfV0("dummy_access_token")
+  await authenticationAdministrationBL.removeAppForSelfV0(
+    "dummy_access_token",
+    "dummy_password"
+  )
 );
 
 // will not work because refresh token are expected from cookies.

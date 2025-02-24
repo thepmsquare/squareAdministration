@@ -65,7 +65,7 @@ class AuthenticationAdministrationBL {
     }
   }
 
-  async removeAppForSelfV0(accessToken: string) {
+  async removeAppForSelfV0(accessToken: string, password: string) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -77,7 +77,7 @@ class AuthenticationAdministrationBL {
         // headers
         { access_token: accessToken },
         // body
-        undefined,
+        { password },
         // query params
         undefined
       );
