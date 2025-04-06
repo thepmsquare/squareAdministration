@@ -11,7 +11,7 @@ const GetAllGreetingsV0ResponseZ = APIOutputZ.extend({
         greeting_datetime: z.string(),
         greeting_is_anonymous: z.boolean(),
         greeting_text: z.string().nullable(),
-        user_credential_username: z.string().nullable(),
+        user_profile_username: z.string().nullable(),
       })
     ),
     total_count: z.number(),

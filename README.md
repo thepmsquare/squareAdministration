@@ -15,6 +15,10 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v3.0.1
+
+- update GetAllGreetingsV0ResponseZ -> user_profile_username.
+
 ### v3.0.0
 
 - AuthenticationAdministrationBL
