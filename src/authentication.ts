@@ -132,5 +132,28 @@ class AuthenticationAdministrationBL {
       throw error;
     }
   }
+  async registerLoginGoogleV0(googleID: string) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "register_login_google/v0",
+        // method
+        "POST",
+        // headers
+        undefined,
+        // body
+        { google_id: googleID },
+        // query params
+        undefined,
+        // credentials
+        "include"
+      );
+      return GenerateAccessTokenV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 export { AuthenticationAdministrationBL };
