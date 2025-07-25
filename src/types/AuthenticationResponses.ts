@@ -67,13 +67,25 @@ const resetPasswordAndLoginUsingBackupCodeV0ResponseZ = APIOutputZ.extend({
     main: z.strictObject({
       user_id: z.string(),
       access_token: z.string(),
-      refresh_token: z.string(),
     }),
   }),
 });
 
 type resetPasswordAndLoginUsingBackupCodeV0Response = z.infer<
   typeof resetPasswordAndLoginUsingBackupCodeV0ResponseZ
+>;
+
+const resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.strictObject({
+      user_id: z.string(),
+      access_token: z.string(),
+    }),
+  }),
+});
+
+type resetPasswordAndLoginUsingResetEmailCodeV0Response = z.infer<
+  typeof resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ
 >;
 
 export {
@@ -91,4 +103,6 @@ export {
   registerLoginGoogleV0Response,
   resetPasswordAndLoginUsingBackupCodeV0ResponseZ,
   resetPasswordAndLoginUsingBackupCodeV0Response,
+  resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ,
+  resetPasswordAndLoginUsingResetEmailCodeV0Response,
 };

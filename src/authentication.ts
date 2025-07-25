@@ -7,6 +7,7 @@ import {
   RegisterUsernameV0ResponseZ,
   RemoveAppForSelfV0ResponseZ,
   resetPasswordAndLoginUsingBackupCodeV0ResponseZ,
+  resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationAdministrationBL {
@@ -185,6 +186,39 @@ class AuthenticationAdministrationBL {
         "include"
       );
       return resetPasswordAndLoginUsingBackupCodeV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async resetPasswordAndLoginUsingResetEmailCodeV0(
+    resetEmailCode: string,
+    username: string,
+    newPassword: string,
+    logoutOtherSessions: boolean = false
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "reset_password_and_login_using_reset_email_code/v0",
+        // method
+        "POST",
+        // headers
+        undefined,
+        // body
+        {
+          reset_email_code: resetEmailCode,
+          username: username,
+          new_password: newPassword,
+          logout_other_sessions: logoutOtherSessions,
+        },
+        // query params
+        undefined,
+        // credentials
+        "include"
+      );
+      return resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
