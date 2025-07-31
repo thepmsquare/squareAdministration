@@ -8,6 +8,7 @@ import {
   RemoveAppForSelfV0ResponseZ,
   resetPasswordAndLoginUsingBackupCodeV0ResponseZ,
   resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ,
+  UpdatePasswordV0ResponseZ,
 } from "./types/AuthenticationResponses.js";
 
 class AuthenticationAdministrationBL {
@@ -219,6 +220,33 @@ class AuthenticationAdministrationBL {
         "include"
       );
       return resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updatePasswordV0(
+    accessToken: string,
+    oldPassword: string,
+    newPassword: string
+  ) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "update_password/v0",
+        // method
+        "PATCH",
+        // headers
+        { access_token: accessToken },
+        // body
+        { old_password: oldPassword, new_password: newPassword },
+        // query params
+        undefined,
+        // credentials
+        "include"
+      );
+      return UpdatePasswordV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

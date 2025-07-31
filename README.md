@@ -21,6 +21,7 @@ helper for administration bl for my projects.
   - add registerLoginGoogleV0.
   - add resetPasswordAndLoginUsingBackupCodeV0.
   - add resetPasswordAndLoginUsingResetEmailCodeV0.
+  - add updatePasswordV0.
 
 ### v3.0.1
 

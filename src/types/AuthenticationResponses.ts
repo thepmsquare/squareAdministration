@@ -88,6 +88,12 @@ type resetPasswordAndLoginUsingResetEmailCodeV0Response = z.infer<
   typeof resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ
 >;
 
+const UpdatePasswordV0ResponseZ = APIOutputZ.extend({
+  data: z.null(),
+});
+
+type UpdatePasswordV0Response = z.infer<typeof UpdatePasswordV0ResponseZ>;
+
 export {
   LoginUsernameV0ResponseZ,
   LoginUsernameV0Response,
@@ -105,4 +111,6 @@ export {
   resetPasswordAndLoginUsingBackupCodeV0Response,
   resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ,
   resetPasswordAndLoginUsingResetEmailCodeV0Response,
+  UpdatePasswordV0ResponseZ,
+  UpdatePasswordV0Response,
 };
