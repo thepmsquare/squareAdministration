@@ -15,7 +15,7 @@ helper for administration bl for my projects.
 
 ## changelog
 
-### v3.1.0 (in progress)
+### v3.1.0
 
 - AuthenticationAdministrationBL
   - add registerLoginGoogleV0.
