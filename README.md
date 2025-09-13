@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v4.0.0
+
+- CoreAdministrationBL
+  - **breaking change**: rename user_profile_username to user_username in GetAllGreetingsV0ResponseZ.
+
 ### v3.1.0
 
 - AuthenticationAdministrationBL
