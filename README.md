@@ -15,6 +15,14 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v5.0.0
+
+- AuthenticationAdministrationBL
+  - **breaking change**: remove registerLoginGoogleV0.
+- types
+  - AuthenticationResponses
+    - **breaking change**: registerLoginGoogleV0ResponseZ, registerLoginGoogleV0Response.
+
 ### v4.0.0
 
 - CoreAdministrationBL

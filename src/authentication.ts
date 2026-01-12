@@ -13,13 +13,13 @@ import {
 
 class AuthenticationAdministrationBL {
   constructor(
-    private administrationBLBaseURL: string = "http://localhost:10111"
+    private administrationBLBaseURL: string = "http://localhost:10111",
   ) {}
 
   async registerUsernameV0(
     username: string,
     password: string,
-    adminPassword: string
+    adminPassword: string,
   ) {
     try {
       const data = await fetchJSONData(
@@ -36,7 +36,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return RegisterUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -60,7 +60,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return LoginUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -82,13 +82,14 @@ class AuthenticationAdministrationBL {
         // body
         { password },
         // query params
-        undefined
+        undefined,
       );
       return RemoveAppForSelfV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
+
   async logoutV0() {
     try {
       const data = await fetchJSONData(
@@ -105,13 +106,14 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return LogoutV0Z.parse(data);
     } catch (error) {
       throw error;
     }
   }
+
   async generateAccessTokenV0() {
     try {
       const data = await fetchJSONData(
@@ -128,41 +130,19 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return GenerateAccessTokenV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
-  async registerLoginGoogleV0(googleID: string) {
-    try {
-      const data = await fetchJSONData(
-        // base url
-        this.administrationBLBaseURL,
-        // endpoint
-        "register_login_google/v0",
-        // method
-        "POST",
-        // headers
-        undefined,
-        // body
-        { google_id: googleID },
-        // query params
-        undefined,
-        // credentials
-        "include"
-      );
-      return GenerateAccessTokenV0ResponseZ.parse(data);
-    } catch (error) {
-      throw error;
-    }
-  }
+
   async resetPasswordAndLoginUsingBackupCodeV0(
     backupCode: string,
     username: string,
     newPassword: string,
-    logoutOtherSessions: boolean = false
+    logoutOtherSessions: boolean = false,
   ) {
     try {
       const data = await fetchJSONData(
@@ -184,18 +164,19 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return resetPasswordAndLoginUsingBackupCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
+
   async resetPasswordAndLoginUsingResetEmailCodeV0(
     resetEmailCode: string,
     username: string,
     newPassword: string,
-    logoutOtherSessions: boolean = false
+    logoutOtherSessions: boolean = false,
   ) {
     try {
       const data = await fetchJSONData(
@@ -217,17 +198,18 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }
   }
+
   async updatePasswordV0(
     accessToken: string,
     oldPassword: string,
-    newPassword: string
+    newPassword: string,
   ) {
     try {
       const data = await fetchJSONData(
@@ -244,7 +226,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include"
+        "include",
       );
       return UpdatePasswordV0ResponseZ.parse(data);
     } catch (error) {
