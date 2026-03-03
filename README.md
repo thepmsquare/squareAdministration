@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v5.1.0
+
+- All
+  - add optional logErrors parameter to all methods.
+
 ### v5.0.0
 
 - AuthenticationAdministrationBL

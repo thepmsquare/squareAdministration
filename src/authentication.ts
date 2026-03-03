@@ -20,6 +20,7 @@ class AuthenticationAdministrationBL {
     username: string,
     password: string,
     adminPassword: string,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -37,6 +38,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return RegisterUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -44,7 +47,11 @@ class AuthenticationAdministrationBL {
     }
   }
 
-  async loginUsernameV0(username: string, password: string) {
+  async loginUsernameV0(
+    username: string,
+    password: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -61,6 +68,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return LoginUsernameV0ResponseZ.parse(data);
     } catch (error) {
@@ -68,7 +77,11 @@ class AuthenticationAdministrationBL {
     }
   }
 
-  async removeAppForSelfV0(accessToken: string, password: string) {
+  async removeAppForSelfV0(
+    accessToken: string,
+    password: string,
+    logErrors: boolean = true,
+  ) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -83,6 +96,10 @@ class AuthenticationAdministrationBL {
         { password },
         // query params
         undefined,
+        // credentials
+        undefined,
+        // log errors
+        logErrors,
       );
       return RemoveAppForSelfV0ResponseZ.parse(data);
     } catch (error) {
@@ -90,7 +107,7 @@ class AuthenticationAdministrationBL {
     }
   }
 
-  async logoutV0() {
+  async logoutV0(logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -107,6 +124,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return LogoutV0Z.parse(data);
     } catch (error) {
@@ -114,7 +133,7 @@ class AuthenticationAdministrationBL {
     }
   }
 
-  async generateAccessTokenV0() {
+  async generateAccessTokenV0(logErrors: boolean = true) {
     try {
       const data = await fetchJSONData(
         // base url
@@ -131,6 +150,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return GenerateAccessTokenV0ResponseZ.parse(data);
     } catch (error) {
@@ -143,6 +164,7 @@ class AuthenticationAdministrationBL {
     username: string,
     newPassword: string,
     logoutOtherSessions: boolean = false,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -165,6 +187,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return resetPasswordAndLoginUsingBackupCodeV0ResponseZ.parse(data);
     } catch (error) {
@@ -177,6 +201,7 @@ class AuthenticationAdministrationBL {
     username: string,
     newPassword: string,
     logoutOtherSessions: boolean = false,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -199,6 +224,8 @@ class AuthenticationAdministrationBL {
         undefined,
         // credentials
         "include",
+        // log errors
+        logErrors,
       );
       return resetPasswordAndLoginUsingResetEmailCodeV0ResponseZ.parse(data);
     } catch (error) {
@@ -210,6 +237,7 @@ class AuthenticationAdministrationBL {
     accessToken: string,
     oldPassword: string,
     newPassword: string,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -226,7 +254,9 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        "include",
+        undefined,
+        // log errors
+        logErrors,
       );
       return UpdatePasswordV0ResponseZ.parse(data);
     } catch (error) {

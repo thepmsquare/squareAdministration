@@ -4,14 +4,15 @@ import { GetAllGreetingsV0ResponseZ } from "./types/CoreResponses.js";
 
 class CoreAdministrationBL {
   constructor(
-    private administrationBLBaseURL: string = "http://localhost:10111"
+    private administrationBLBaseURL: string = "http://localhost:10111",
   ) {}
 
   async getAllGreetingsV0(
     accessToken: string,
     orderBy?: string[],
     limit?: number,
-    offset?: number
+    offset?: number,
+    logErrors: boolean = true,
   ) {
     try {
       const data = await fetchJSONData(
@@ -26,7 +27,11 @@ class CoreAdministrationBL {
         // body
         { limit, offset, order_by: orderBy },
         // query params
-        undefined
+        undefined,
+        // credentials
+        undefined,
+        // log errors
+        logErrors,
       );
       return GetAllGreetingsV0ResponseZ.parse(data);
     } catch (error) {
