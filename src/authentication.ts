@@ -254,7 +254,7 @@ class AuthenticationAdministrationBL {
         // query params
         undefined,
         // credentials
-        undefined,
+        "include",
         // log errors
         logErrors,
       );

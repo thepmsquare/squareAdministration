@@ -15,6 +15,12 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v5.1.1
+
+- AuthenticationAdministrationBL
+  - updatePasswordV0
+    - set credentials: include instead of undefined.
+
 ### v5.1.0
 
 - All
