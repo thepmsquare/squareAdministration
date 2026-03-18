@@ -15,6 +15,11 @@ helper for administration bl for my projects.
 
 ## changelog
 
+### v5.2.0
+
+- AuthenticationAdministrationBL
+  - re add registerLoginGoogleV0.
+
 ### v5.1.1
 
 - AuthenticationAdministrationBL

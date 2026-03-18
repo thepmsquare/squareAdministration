@@ -4,6 +4,7 @@ import {
   GenerateAccessTokenV0ResponseZ,
   LoginUsernameV0ResponseZ,
   LogoutV0Z,
+  RegisterLoginGoogleV0ResponseZ,
   RegisterUsernameV0ResponseZ,
   RemoveAppForSelfV0ResponseZ,
   resetPasswordAndLoginUsingBackupCodeV0ResponseZ,
@@ -259,6 +260,31 @@ class AuthenticationAdministrationBL {
         logErrors,
       );
       return UpdatePasswordV0ResponseZ.parse(data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async registerLoginGoogleV0(googleID: string, logErrors: boolean = true) {
+    try {
+      const data = await fetchJSONData(
+        // base url
+        this.administrationBLBaseURL,
+        // endpoint
+        "register_login_google/v0",
+        // method
+        "POST",
+        // headers
+        undefined,
+        // body
+        { google_id: googleID },
+        // query params
+        undefined,
+        // credentials
+        "include",
+        // log errors
+        logErrors,
+      );
+      return RegisterLoginGoogleV0ResponseZ.parse(data);
     } catch (error) {
       throw error;
     }

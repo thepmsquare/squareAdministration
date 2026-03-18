@@ -78,6 +78,21 @@ const UpdatePasswordV0ResponseZ = APIOutputZ.extend({
 
 type UpdatePasswordV0Response = z.infer<typeof UpdatePasswordV0ResponseZ>;
 
+const RegisterLoginGoogleV0ResponseZ = APIOutputZ.extend({
+  data: z.strictObject({
+    main: z.strictObject({
+      user_id: z.string(),
+      username: z.string(),
+      app_id: z.number().nullable(),
+      access_token: z.string().nullable(),
+      was_new_user: z.boolean(),
+    }),
+  }),
+});
+type RegisterLoginGoogleV0Response = z.infer<
+  typeof RegisterLoginGoogleV0ResponseZ
+>;
+
 export {
   LoginUsernameV0ResponseZ,
   LoginUsernameV0Response,
@@ -95,4 +110,6 @@ export {
   resetPasswordAndLoginUsingResetEmailCodeV0Response,
   UpdatePasswordV0ResponseZ,
   UpdatePasswordV0Response,
+  RegisterLoginGoogleV0ResponseZ,
+  RegisterLoginGoogleV0Response,
 };
